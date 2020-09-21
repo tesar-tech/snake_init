@@ -1,6 +1,7 @@
 clear
 
 snakes = [snake([1 0 0],'Radim',@AIRadim),... 
+           snake([0 1 0],'Nahoda',@AINahoda),...  
           
           ];
       
