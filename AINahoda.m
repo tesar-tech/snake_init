@@ -9,28 +9,8 @@ function smer = AINahoda( map,pos, directionIn )
 %   
    
     if(directionIn == 0)
-        directionIn = 1;
+        directionIn = randi(4);
     end
-    smer = 3;  
-    
-   okoli = [-1,0;0,1;1,0;0,-1];    
-   smer = directionIn;
-   smerR = mod(directionIn+1 - 1,4) + 1; 
-   smerL = mod(directionIn-1 - 1,4) + 1; 
-   if(rand()<0.5)
-       s = smerL;
-       smerL = smerR;
-       smerR = s; 
-   end
-   for k = [smer,smerR,smerL]
-      np = pos + okoli(k,:);
-      if(map(np(1),np(2))== 0 || map(np(1),np(2))== 2)
-          smer = k;
-          break;
-      end
-      
-   end
-   
-   toc
+    smer = directionIn;
 end
 
